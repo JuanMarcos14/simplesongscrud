@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'pages/songs_list_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Simple Crud',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Simple SQLite CRUD'),
-    );
+        title: 'Simple Crud',
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        // home: const MyHomePage(title: 'Simple SQLite CRUD'),
+        home: SongsListPage());
   }
 }
 
