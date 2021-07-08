@@ -2,9 +2,9 @@
 
 A new Flutter CRUD using SQLite.
 
-## Aditional Info
+## Additional Info
 
-Este proyecto no necesita configuración adicional para funcionar.
+This project doesn't need any additional config to run in an already working Flutter dev environment.
 
 
 
