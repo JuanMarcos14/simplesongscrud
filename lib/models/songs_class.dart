@@ -1,3 +1,14 @@
+const String tableSongs = 'songs';
+
+class SongFields {
+  static final List<String> values = [id, title, artists, duration];
+
+  static const String id = '_id';
+  static const String title = '_title';
+  static const String artists = '_artists';
+  static const String duration = '_duration';
+}
+
 class Song {
   final int id;
   final String title;
@@ -10,6 +21,33 @@ class Song {
     required this.artists,
     required this.duration,
   });
+
+  Song copy({
+    int? id,
+    String? title,
+    String? artists,
+    int? duration,
+  }) =>
+      Song(
+        id: id ?? this.id,
+        title: title ?? this.title,
+        artists: artists ?? this.artists,
+        duration: duration ?? this.duration,
+      );
+
+  Map<String, Object?> toJson() => {
+        SongFields.id: id,
+        SongFields.title: title,
+        SongFields.artists: artists,
+        SongFields.duration: duration,
+      };
+
+  static Song fromJson(Map<String, Object?> json) => Song(
+        id: json[SongFields.id] as int,
+        title: json[SongFields.title] as String,
+        artists: json[SongFields.artists] as String,
+        duration: json[SongFields.duration] as int,
+      );
 }
 
 List<Song> sampleSongs = [

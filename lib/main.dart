@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green,
         ),
         // home: const MyHomePage(title: 'Simple SQLite CRUD'),
-        home: SongsListPage());
+        home: const SongsListPage());
   }
 }
 
