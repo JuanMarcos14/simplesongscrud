@@ -63,7 +63,7 @@ class SongsDatabase {
     }
   }
 
-  Future<List<Song>> readAllSong(int id) async {
+  Future<List<Song>> readAllSong() async {
     final db = await instance.database;
 
     final results = await db.query(tableSongs);

@@ -10,13 +10,13 @@ class SongFields {
 }
 
 class Song {
-  final int id;
+  final int? id;
   final String title;
   final String artists;
   final int duration;
 
   Song({
-    required this.id,
+    this.id,
     required this.title,
     required this.artists,
     required this.duration,
@@ -63,4 +63,11 @@ String getTimeFromSecongs(int seconds) {
   var d = Duration(seconds: seconds);
   List<String> parts = d.toString().split(':');
   return '${parts[1]}:${parts[2].split('.')[0]}';
+}
+
+int getSecondsFromTime(String time) {
+  var minutesAndSeconds = time.split(':');
+  var m2S = int.parse(minutesAndSeconds[0]) * 60;
+  var seconds = m2S + int.parse(minutesAndSeconds[1]);
+  return seconds;
 }
